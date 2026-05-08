@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apply to GAS-U | GAS-U</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@400;600;700;800;900&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="full-name-banner">Grayce Apostolic Seminar University (GAS-U)</div>
+
+<header class="site-top">
+  <div class="topline">
+    <span>River City, Iowa</span>
+    <span>Become the Person that God Wants</span>
+    <span>Applications Open</span>
+  </div>
+  <nav class="navbar">
+    <a class="brand" href="index.html">
+      <img src="assets/gasu-seal.png" alt="GAS-U seal">
+      <span>
+        <b>GAS-U</b>
+        <small>Grayce Apostolic</small>
+        <small>Seminar University</small>
+      </span>
+    </a>
+    <button class="nav-toggle" aria-label="Open menu">Menu</button>
+    <div class="navlinks">
+      <a class="" href="index.html">Home</a>
+      <a class="" href="about.html">About</a>
+      <div class="dropdown">
+        <button class="">Programs</button>
+        <div class="dropdown-menu">
+          <a href="free-courses.html">Free Courses</a>
+          <a href="undergraduate.html">Undergraduate</a>
+          <a href="masters.html">Master's</a>
+          <a href="doctorate.html">Doctorate</a>
+        </div>
+      </div>
+      <a class="" href="events.html">Events</a>
+      <a class="apply active" href="apply.html">Apply</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+<section class="subhero" style="--hero-img:url(https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=1200&q=80);">
+  <div class="subhero-inner reveal">
+    <p class="kicker">GAS-U</p>
+    <h1>Apply to <span class="page-spark">GAS-U</span></h1>
+    <p>Begin your request for information from the <span class="copy-pop copy-pop-red">Office of Apostolic Admissions</span>.</p>
+  </div>
+</section>
+
+<section class="content-wrap apply-layout">
+  <div class="apply-copy reveal">
+    <p class="kicker">Admissions</p>
+    <h2>Begin your calling.</h2>
+    <p>Submit your information and the Office of Apostolic Admissions will send program details, scholarship information, and campus visit options.</p>
+    <blockquote>When you&#x27;re tired and sick of all the wrong stuff you&#x27;ve done in your life, get over here and become a totally different person.</blockquote>
+  </div>
+  <form class="application reveal" id="interestForm">
+    <label>Full Name<input name="name" required placeholder="Your name"></label>
+    <label>Email<input name="email" type="email" required placeholder="you@example.com"></label>
+    <label>Program Level<select><option>Free Course</option><option>Undergraduate</option><option>Master's</option><option>Doctorate</option></select></label>
+    <label>Are you ready to become someone else?<select><option>Yes</option><option>Already have</option><option>I brought a backpack</option><option>My family tried to warn me</option></select></label>
+    <label>Personal Statement<textarea placeholder="Tell us about your calling, cash readiness, and transformation posture."></textarea></label>
+    <button type="submit">Submit Request</button>
+    <p id="formMessage"></p>
+  </form>
+</section>
+
+</main>
+<footer>
+  <div class="footer-brand">
+    <img src="assets/gasu-seal.png" alt="GAS-U seal">
+    <div><b>GAS-U</b><span>Grayce Apostolic<br>Seminar University</span></div>
+  </div>
+  <p>GAS-U: All rights baptized. Piss in my Pants Publications, The Cruci-fiction Company</p>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
