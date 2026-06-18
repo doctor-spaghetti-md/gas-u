@@ -143,6 +143,7 @@ button:focus-visible,
 .request-card{background:rgba(248,251,255,.96);color:#071426;padding:1.4rem;box-shadow:var(--shadow);border-left:5px solid var(--red)}
 .request-card h2{font-size:2rem;color:#071426}
 .request-card label{display:grid;gap:.35rem;margin-bottom:.8rem;font-weight:800;color:#071426}
+.request-card em{display:block;color:var(--red2)}
 .request-card input,.request-card select{width:100%;padding:.8rem;border:1px solid #ccd5e0;font:inherit}
 .request-card button{width:100%;background:var(--red);color:#fff;box-shadow:0 0 0 rgba(215,25,32,0)}
 .request-card button:hover,.application button:hover,.nav-toggle:hover{box-shadow:0 0 18px rgba(215,25,32,.55),0 12px 24px rgba(0,0,0,.22)}
@@ -168,7 +169,38 @@ figcaption{padding:.9rem 0;color:#e9f1ff;font-family:Libre Baskerville,serif;bor
 .testimonials .section-head,.testimonial-grid{max-width:1180px;margin-left:auto;margin-right:auto}
 .testimonial{padding:1.2rem;text-align:center;position:relative;overflow:hidden}
 .testimonial:before{content:"LIVE";position:absolute;top:.7rem;left:.7rem;background:var(--red);color:white;font-size:.65rem;font-weight:900;padding:.25rem .4rem}
-.portrait{width:86px;height:86px;border-radius:50%;margin:0 auto 1rem;display:grid;place-items:center;background:linear-gradient(135deg,var(--red),var(--blue));color:#fff;font-weight:900;border:4px solid var(--gold);box-shadow:7px 7px 0 rgba(47,128,255,.35)}
+
+.portrait {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  display: block;
+
+  background-size: cover;      /* makes the image fill the circle */
+  background-position: center; /* keeps the subject centered */
+  background-repeat: no-repeat;
+
+  border: 4px solid var(--gold);
+  box-shadow: 7px 7px 0 rgba(47,128,255,.35);
+}
+
+.p1 {
+  background-image: url("assets/photo8.jpg");
+}
+
+.p2 {
+  background-image: url("assets/photo4.jpg");
+}
+
+.p3 {
+  background-image: url("assets/photo6.jpg");
+}
+
+.p4 {
+  background-image: url("assets/photo9.jpg");
+}
+
 .testimonial p{color:#172033;font-family:Libre Baskerville,serif}
 .testimonial b{display:block;color:var(--red)}
 .testimonial span{color:#5b667a;font-size:.82rem;font-weight:800;text-transform:uppercase}
@@ -608,6 +640,16 @@ h1, h2, h3 {
   text-align: center;
 }
 
+.subhero-title {
+  font-size: clamp(2.5rem,8vw,6rem); /* adjust to whatever size works */
+}
+
+.subhero-red {
+  font-size: clamp(1.5rem,8vw,3rem); /* adjust to whatever size works */
+}
+
+.subhero-inner em{display:block;color:var(--red2)}
+
 .subhero-inner p {
   max-width: 720px;
   text-wrap: balance;
@@ -1008,7 +1050,7 @@ footer{
 
 .hymn-machine{
   color:var(--gold);
-  animation:machineFlicker 4.6s steps(1,end) infinite;
+  animation:machineFlicker 2.6s steps(1,end) infinite;
 }
 
 .hymn-save{
@@ -1055,7 +1097,7 @@ footer{
   position:relative;
   width:max-content;
   color:#fff;
-  animation:warningBlink 4.8s steps(2,end) infinite;
+  animation:warningBlink 2.8s steps(2,end) infinite;
 }
 
 .choose-warning::before{
@@ -1073,23 +1115,85 @@ footer{
   50%{transform:rotate(1deg) scale(1.045); filter:brightness(1.16)}
 }
 
-@keyframes machineFlicker{
-  0%,72%,100%{opacity:1; text-shadow:0 0 12px rgba(245,197,66,.5),0 0 24px rgba(47,128,255,.18)}
-  73%{opacity:.58; text-shadow:none}
-  75%{opacity:1}
-  77%{opacity:.76}
-  80%{opacity:1}
+@keyframes machineFlicker {
+  0%, 60%, 100% {
+    opacity: 1;
+    text-shadow:
+      0 0 12px rgba(245,197,66,.5),
+      0 0 24px rgba(47,128,255,.18);
+  }
+
+  /* Quick dim drops */
+  62% { opacity: .85; }
+  64% { opacity: .55; text-shadow: none; }
+
+  /* Sharp flicker bursts */
+  67% {
+    opacity: 1;
+    text-shadow:
+      0 0 18px rgba(245,197,66,.7),
+      0 0 30px rgba(47,128,255,.25);
+  }
+
+  /* Your original sequence expanded */
+  72% { opacity: 1; }
+  73% { opacity: .45; text-shadow: none; }
+  75% {
+    opacity: 1;
+    text-shadow:
+      0 0 10px rgba(245,197,66,.4),
+      0 0 20px rgba(47,128,255,.15);
+  }
+  77% { opacity: .6; text-shadow: none; }
+  80% { opacity: 1; }
+
+  /* Extra jitter toward the end */
+  82% { opacity: .7; }
+  84% {
+    opacity: 1;
+    text-shadow:
+      0 0 15px rgba(245,197,66,.6),
+      0 0 28px rgba(47,128,255,.2);
+  }
+  87% { opacity: .5; text-shadow: none; }
 }
+
 
 @keyframes softGoldBreath{
   0%,100%{text-shadow:0 0 10px rgba(245,197,66,.34)}
   50%{text-shadow:0 0 22px rgba(245,197,66,.82),0 0 38px rgba(47,128,255,.24)}
 }
 
-@keyframes warningBlink{
-  0%,88%,100%{filter:brightness(1)}
-  90%{filter:brightness(1.7)}
-  94%{filter:brightness(.75)}
+@keyframes warningBlink {
+  /* Normal baseline */
+  0%, 20%, 100% {
+    filter: brightness(1);
+  }
+
+  /* Quick bright flash */
+  22% {
+    filter: brightness(1.45);
+  }
+
+  /* Fast drop */
+  24% {
+    filter: brightness(.75);
+  }
+
+  /* Stronger pop */
+  26% {
+    filter: brightness(1.65);
+  }
+
+  /* Sharp dim */
+  28% {
+    filter: brightness(.65);
+  }
+
+  /* Reset to normal */
+  30% {
+    filter: brightness(1);
+  }
 }
 
 @keyframes emphasisUnderline{
