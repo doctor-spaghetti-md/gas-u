@@ -237,7 +237,7 @@ figcaption{padding:.9rem 0;color:#e9f1ff;font-family:Libre Baskerville,serif;bor
 .application button{background:var(--red);color:#fff;width:100%;box-shadow:0 0 0 rgba(215,25,32,0)}
 footer{display:flex;justify-content:space-between;gap:1rem;align-items:center;padding:2rem clamp(1rem,4vw,3rem);background:#02040a;border-top:2px solid var(--bright-blue);color:#dfeaff}
 .footer-brand{display:flex;align-items:center;gap:.8rem}
-.footer-brand img{width:60px;height:60px;object-fit:contain;background:#fff;padding:5px}
+.footer-brand img{width:80px;height:80px;object-fit:contain;padding:5px}
 .footer-brand b{display:block;font-size:1.5rem;color:#fff}
 .footer-brand span{color:#b9c4d6;font-size:.85rem;text-transform:uppercase;font-weight:800}
 footer p{max-width:480px;color:#b9c4d6}
